@@ -5,11 +5,22 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
         }
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #4CAF50;
+            text-align: center;
+            margin-bottom: 20px;
         }
         .form-group {
             margin-bottom: 15px;
@@ -17,11 +28,26 @@
         label {
             display: block;
             margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
         }
         input, button {
             padding: 10px;
             font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            width: calc(100% - 22px);
             margin-top: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
         }
         table {
             width: 100%;
@@ -32,11 +58,22 @@
             border: 1px solid #ddd;
         }
         th, td {
-            padding: 10px;
+            padding: 12px;
             text-align: left;
         }
         th {
             background-color: #f4f4f4;
+            color: #555;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        #total-amount {
+            margin-top: 20px;
+            text-align: right;
+        }
+        #total-amount h2 {
+            color: #4CAF50;
         }
     </style>
 </head>
