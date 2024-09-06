@@ -47,15 +47,15 @@
         <!-- Form to Add New Item -->
         <form id="sales-form">
             <div class="form-group">
-                <label for="item">Item Name:</label>
+                <label for="item">Nama Item:</label>
                 <input type="text" id="item" name="item" required>
             </div>
             <div class="form-group">
-                <label for="price">Price:</label>
+                <label for="price">Harga:</label>
                 <input type="number" id="price" name="price" step="0.01" required>
             </div>
             <div class="form-group">
-                <label for="quantity">Quantity:</label>
+                <label for="quantity">Jumlah:</label>
                 <input type="number" id="quantity" name="quantity" min="1" required>
             </div>
             <button type="submit">Add Item</button>
@@ -65,9 +65,9 @@
         <table id="sales-table">
             <thead>
                 <tr>
-                    <th>Item Name</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
+                    <th>Nama Item</th>
+                    <th>Harga</th>
+                    <th>Jumlah</th>
                     <th>Total</th>
                 </tr>
             </thead>
@@ -78,7 +78,7 @@
 
         <!-- Total Amount Display -->
         <div id="total-amount">
-            <h2>Total Amount: $<span id="total">0.00</span></h2>
+            <h2>Jumlah Total: Rp<span id="total">0.00</span></h2>
         </div>
     </div>
 
