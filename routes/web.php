@@ -5,7 +5,11 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SalesController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LevelController;
 
+use Monolog\Level;
+
+//JOBSHEET 2 : MEMBUAT ROUTE
 
 //Controller Class Home
 Route::get('/', [HomeController::class, 'home'])->name('home');
@@ -23,3 +27,7 @@ Route::get('user/{id}/name/{name}', [UserController::class, 'profile'])->name('u
 
 //Controller Class Saless/Penjualan
 Route::get('sales', [SalesController::class, 'index'])->name('sales.index');
+
+//Jobsheet 3 : Implementasi DB FACADE
+Route::get('/level', [LevelController::class, 'index']);
+
