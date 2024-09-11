@@ -49,12 +49,29 @@
         </style>
     </head> 
     <body>
-        <div class="container">
+        {{-- <div class="container">
             <h1>Selamat Datang</h1>
             <p> Nomor ID  Anda : {{ $id }}</p>
             <p> Nama Anda      : {{ $name }}</p>
             <br>
             <a href="{{ route('home')}}">Kembali ke Home </a>
-        </div>
+        </div> --}}
+        <h1>Data User</h1>
+        <table border="1" cellpadding="2", cellspacing="0">
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Nama</th>
+                <th>ID Level Pengguna</th>
+            </tr>
+            @foreach ($data as $d )
+            <tr>
+                <td>{{ $d->user_id }}</td>
+                <td>{{ $d->username }}</td>
+                <td>{{ $d->nama }}</td>
+                <td>{{ $d->level_id }}</td>
+            </tr>            
+            @endforeach
+        </table>
     </body>
 </html>

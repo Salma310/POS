@@ -23,10 +23,12 @@ Route::prefix('category')->group(function () {
 });
 
 //Controller Class User/Profil
-Route::get('user/{id}/name/{name}', [UserController::class, 'profile'])->name('user.profile');
+// Route::get('user/{id}/name/{name}', [UserController::class, 'profile'])->name('user.profile');
 
 //Controller Class Saless/Penjualan
 Route::get('sales', [SalesController::class, 'index'])->name('sales.index');
+
+//================================================================================
 
 //Jobsheet 3 : Implementasi DB FACADE
 Route::get('/level', [LevelController::class, 'index']);
@@ -34,3 +36,7 @@ Route::get('/level', [LevelController::class, 'index']);
 //Query Builder
 use App\Http\Controllers\KategoriController;
 Route::get('/kategori', [KategoriController::class, 'index']);
+
+
+//Eloquent ORM
+Route::get('/user', [UserController::class, 'index']);
