@@ -31,3 +31,6 @@ Route::get('sales', [SalesController::class, 'index'])->name('sales.index');
 //Jobsheet 3 : Implementasi DB FACADE
 Route::get('/level', [LevelController::class, 'index']);
 
+//Query Builder
+use App\Http\Controllers\KategoriController;
+Route::get('/kategori', [KategoriController::class, 'index']);
