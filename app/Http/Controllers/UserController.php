@@ -13,9 +13,26 @@ class UserController extends Controller
     //     return view('user', ['id' => $id, 'name' => $name]);
     // }
 
-    //JOBSHEET 3
     public function index(){
 
+    //JOBSHEET 4
+
+        // $data = [
+        //     'level_id' => 2,
+        //     'username' => 'manager_dua',
+        //     'nama' => 'manager',
+        //     'password' => Hash::make('12345')
+        // ];
+        $data = [
+            'level_id' => 2,
+            'username' => 'manager_tiga',
+            'nama' => 'Manager 3',
+            'password' => Hash::make('12345')
+        ];
+        UserModel::create($data);
+
+        
+    //JOBSHEET 3
         //coba akses model UserModel
         $user = UserModel::all(); //Ambil semua data dari tabel m_user
         return view('user', ['data' => $user]);
