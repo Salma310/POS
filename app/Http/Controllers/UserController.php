@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\UserModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -14,12 +15,52 @@ class UserController extends Controller
     // }
 
     public function index(){
-
     //JOBSHEET 4
-    // Praktikum 2.3 JS4 : Retreiving Aggregrates
-        $user= UserModel::where('level_id', 2)->count();
-        // dd($user);
+    // Praktikum 2.4 JS4 : Retreiving or Creating Models
+
+         $user = UserModel::firstOrNew(
+            [
+                'username' => 'manager33',
+                'nama' => 'Manager Tiga Tiga',
+                'level_id' => 2,
+                'password' => Hash::make('12345')
+            ],
+        );
+        $user->save();
         return view('user', ['data' => $user]);
+
+
+        // $user = UserModel::firstOrNew(
+        //     [
+        //         'username' => 'manager',
+        //         'nama' => 'Manager',
+        //     ],
+        // );
+        // return view('user', ['data' => $user]);
+
+
+        // $user = UserModel::firstOrCreate(
+        //     [
+        //         'username' => 'manager22',
+        //         'nama' => 'Manager Dua Dua',
+        //         'level_id' => 2,
+        //         'password' => Hash::make('12345')
+        //     ],
+        // );
+        // return view('user', ['data' => $user]);
+        
+        // $user = UserModel::firstOrCreate(
+        //     [
+        //         'username' => 'manager',
+        //         'nama' => 'Manager'
+        //     ],
+        // );
+        // return view('user', ['data' => $user]);
+
+    // Praktikum 2.3 JS4 : Retreiving Aggregrates
+        // $user= UserModel::where('level_id', 2)->count();
+        // dd($user);
+        // return view('user', ['data' => $user]);
 
 
 
