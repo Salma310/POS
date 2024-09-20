@@ -16,18 +16,61 @@ class UserController extends Controller
 
     public function index(){
     //JOBSHEET 4
-    // Praktikum 2.4 JS4 : Retreiving or Creating Models
-
-         $user = UserModel::firstOrNew(
-            [
-                'username' => 'manager33',
-                'nama' => 'Manager Tiga Tiga',
+    // Praktikum 2.5 – Attribute Changes
+    // Nomor 2
+        $user = UserModel::create([
+                'username' => 'manager11',
+                'nama' => 'Manager Sebelas',
                 'level_id' => 2,
                 'password' => Hash::make('12345')
-            ],
-        );
+            ]);
+        $user->username = 'manager12';
+
         $user->save();
-        return view('user', ['data' => $user]);
+
+        $user->wasChanged(); //true
+        $user->wasChanged('username'); //true
+        $user->wasChanged('username', 'level_id'); //true
+        $user->wasChanged('nama'); //false
+        dd($user->wasChanged(['nama', 'username']));
+      
+
+    // Nomor 1
+        // $user = UserModel::create([
+        //         'username' => 'manager55',
+        //         'nama' => 'Manager Lima Lima',
+        //         'level_id' => 2,
+        //         'password' => Hash::make('12345')
+        //     ]);
+        // $user->username = 'manager56';
+
+        // $user->isDirty(); //true
+        // $user->isDirty('username');  //true
+        // $user->isDirty('nama'); //false
+        // $user->isDirty('nama', 'username'); //true
+        // $user->isClean(); //false
+        // $user->isClean('username'); //false
+        // $user->isClean('nama');  //true
+        // $user->isClean('nama', 'username'); //false
+
+        // $user->save();
+
+        // $user->isDirty(); //false
+        // $user->isClean(); //true
+        // dd($user->isDirty());
+    
+    // Praktikum 2.4 JS4 : Retreiving or Creating Models
+
+        //  $user = UserModel::firstOrNew(
+        //     [
+        //         'username' => 'manager33',
+        //         'nama' => 'Manager Tiga Tiga',
+        //         'level_id' => 2,
+        //         'password' => Hash::make('12345')
+        //     ],
+        // );
+        // $user->save();
+        // return view('user', ['data' => $user]);
 
 
         // $user = UserModel::firstOrNew(
