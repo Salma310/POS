@@ -58,9 +58,31 @@
         </div> --}}
         <h1>Data User</h1> 
     {{-- Praktikum 4 --}}
+        {{-- Praktikum 4 bagian 2.7 --}}
+            <a href="{{url('user/tambah')}}">+ Tambah User</a><br><br><br>
+            <table border="1" cellpadding="2", cellspacing="0">
+            <tr>
+                <td>ID</td>
+                <td>Username</td>
+                <td>Nama</td>
+                <td>ID Level Pengguna</td>
+                <td>Kode Level</td>
+                <td>Nama Level</td>
+                <td>Aksi</td>
+            </tr>
+            @foreach ($data as $d )
+            <tr>
+                <td>{{ $d->user_id }}</td>
+                <td>{{ $d->username }}</td>
+                <td>{{ $d->nama }}</td>
+                <td>{{ $d->level_id }}</td>
+                <td>{{ $d->level->level_kode }}</td>
+                <td>{{ $d->level->level_nama }}</td>
+                <td><a href="{{ url('/user/ubah/' . $d->user_id) }}">Ubah</a> | <a href="{{ url('/user/hapus/' . $d->user_id)}}">Hapus</a></td>
+            </tr>            
+            @endforeach
         {{-- Praktikum 4 bagian 2.6 --}}
-        {{-- href="{{url('user')}}" --}}
-        <a href="{{url('user/tambah')}}">+ Tambah User</a><br><br><br>
+        {{-- <a href="{{url('user/tambah')}}">+ Tambah User</a><br><br><br>
          <table border="1" cellpadding="2", cellspacing="0">
             <tr>
                 <td>ID</td>
@@ -77,7 +99,7 @@
                 <td>{{ $d->level_id }}</td>
                 <td><a href="{{ url('/user/ubah/' . $d->user_id) }}">Ubah</a> | <a href="{{ url('/user/hapus/' . $d->user_id)}}">Hapus</a></td>
             </tr>            
-            @endforeach
+            @endforeach --}}
            
         {{-- Praktikum 4 bagian 2.3 --}}
         {{-- <table border="1" cellpadding="2", cellspacing="0">

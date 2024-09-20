@@ -16,9 +16,14 @@ class UserController extends Controller
 
     public function index(){
     //JOBSHEET 4
+    // Praktikum 2.7 – Relasi
+    $user = UserModel::with('level')->get();
+    // dd($user);
+    return view('user', ['data' => $user]);
+
     // Praktikum 2.6 – Create, Read, Update, Delete (CRUD)
-        $user = UserModel::all();
-        return view('user', ['data' => $user]);
+        // $user = UserModel::all();
+        // return view('user', ['data' => $user]);
 
     // Praktikum 2.5 – Attribute Changes
     // Nomor 2
