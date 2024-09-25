@@ -35,6 +35,7 @@ Route::get('/level', [LevelController::class, 'index']);
 
 //Query Builder
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\WelcomeController;
 use Monolog\Handler\RotatingFileHandler;
 
 Route::get('/kategori', [KategoriController::class, 'index']);
@@ -49,3 +50,5 @@ Route::post('/user/tambah_simpan', [UserController::class, 'tambah_simpan']);
 Route::get('/user/ubah/{id}', [UserController::class, 'ubah']);
 Route::put('/user/ubah_simpan/{id}', [UserController::class, 'ubah_simpan']);
 Route::get('/user/hapus/{id}', [UserController::class, 'hapus']);
+
+Route::get('/', [WelcomeController::class, 'index']);
