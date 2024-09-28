@@ -52,6 +52,15 @@
                   <p>Data Barang</p>
               </a>
           </li>
+
+            <!-- Data Supplier Section -->
+            <li class="nav-header">Data Supplier</li>
+            <li class="nav-item">
+                <a href="{{ url('/supplier') }}" class="nav-link {{ ($activeMenu == 'supplier') ? 'active' : '' }}">
+                    <i class="nav-icon fas fa-users"></i>
+                    <p>Data Supplier</p>
+                </a>
+            </li>
           
           <!-- Data Transaksi Section -->
           <li class="nav-header">Data Transaksi</li>

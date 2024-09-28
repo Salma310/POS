@@ -35,6 +35,7 @@ Route::get('/level', [LevelController::class, 'index']);
 
 //Query Builder
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\WelcomeController;
 use Monolog\Handler\RotatingFileHandler;
 
@@ -85,4 +86,15 @@ Route::group(['prefix' => 'kategori'], function(){
     Route::get('/{id}/edit', [KategoriController::class, 'edit']);  //menampilkan halaman form edit user
     Route::put('/{id}', [KategoriController::class, 'update']);     //menyimpan perubahan data user
     Route::delete('/{id}', [KategoriController::class, 'destroy']); //mengahapus data user
+});
+
+Route::group(['prefix' => 'supplier'], function(){
+    Route::get('/', [SupplierController::class, 'index']);          //menampilkan halaman awal user
+    Route::post('/list', [SupplierController::class, 'list']);      //menampilkan data user dalam bentuk json untuk datatables
+    Route::get('/create', [SupplierController::class, 'create']);   //Menampilkan halaman form tambah user
+    Route::post('/', [SupplierController::class, 'store']);         //Menyimpan data user baru
+    Route::get('/{id}', [SupplierController::class, 'show']);       //menampilkan detail user
+    Route::get('/{id}/edit', [SupplierController::class, 'edit']);  //menampilkan halaman form edit user
+    Route::put('/{id}', [SupplierController::class, 'update']);     //menyimpan perubahan data user
+    Route::delete('/{id}', [SupplierController::class, 'destroy']); //mengahapus data user
 });
