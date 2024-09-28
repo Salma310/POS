@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BarangController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
@@ -97,4 +98,15 @@ Route::group(['prefix' => 'supplier'], function(){
     Route::get('/{id}/edit', [SupplierController::class, 'edit']);  //menampilkan halaman form edit user
     Route::put('/{id}', [SupplierController::class, 'update']);     //menyimpan perubahan data user
     Route::delete('/{id}', [SupplierController::class, 'destroy']); //mengahapus data user
+});
+
+Route::group(['prefix' => 'barang'], function(){
+    Route::get('/', [BarangController::class, 'index']);          //menampilkan halaman awal user
+    Route::post('/list', [BarangController::class, 'list']);      //menampilkan data user dalam bentuk json untuk datatables
+    Route::get('/create', [BarangController::class, 'create']);   //Menampilkan halaman form tambah user
+    Route::post('/', [BarangController::class, 'store']);         //Menyimpan data user baru
+    Route::get('/{id}', [BarangController::class, 'show']);       //menampilkan detail user
+    Route::get('/{id}/edit', [BarangController::class, 'edit']);  //menampilkan halaman form edit user
+    Route::put('/{id}', [BarangController::class, 'update']);     //menyimpan perubahan data user
+    Route::delete('/{id}', [BarangController::class, 'destroy']); //mengahapus data user
 });
